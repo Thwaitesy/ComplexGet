@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
-    <id>ComplexGet.Client</id>
-    <version>1.6.3</version>
+    <id>$id$</id>
+    <version>$version$</version>
     <title>ComplexGet Client</title>
     <authors>Sam Thwaites</authors>
     <owners>Sam Thwaites</owners>
@@ -19,7 +19,7 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="bin\Release\ComplexGet.Client.dll" target="lib\portable-net45+win+MonoAndroid10+MonoTouch10\" />
-    <file src="bin\Release\ComplexGet.Client.pdb" target="lib\portable-net45+win+MonoAndroid10+MonoTouch10\" />
+    <file src="bin\$configuration$\$id$.dll" target="lib\portable-net45+win+MonoAndroid10+MonoTouch10\" />
+    <file src="bin\$configuration$\$id$.pdb" target="lib\portable-net45+win+MonoAndroid10+MonoTouch10\" />
   </files>
 </package>

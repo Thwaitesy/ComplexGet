@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
-    <id>ComplexGet.Api</id>
-    <version>1.0</version>
+    <id>$id$</id>
+    <version>$version$</version>
     <title>ComplexGet Api</title>
     <authors>Sam Thwaites</authors>
     <owners>Sam Thwaites</owners>
@@ -13,12 +13,12 @@
     <language>en-AU</language>
     <tags>complexget</tags>
 	  <dependencies>
-      <dependency id="ComplexGet.Client" version="1.0" />
+      <dependency id="ComplexGet.Client" version="$version$" />
       <dependency id="Microsoft.AspNet.OData" version="5.3.1" />
     </dependencies>
   </metadata>
   <files>
-    <file src="bin\Release\ComplexGet.Api.dll" target="lib\net45\" />
-    <file src="bin\Release\ComplexGet.Api.pdb" target="lib\net45\" />
+    <file src="bin\$configuration$\$id$.dll" target="lib\net45\" />
+    <file src="bin\$configuration$\$id$.pdb" target="lib\net45\" />
   </files>
 </package>
