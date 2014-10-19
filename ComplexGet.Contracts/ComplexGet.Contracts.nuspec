@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>ComplexGet.Contracts</id>
+    <version>1.2</version>
+    <title>ComplexGet Contracts</title>
+    <authors>Sam Thwaites</authors>
+    <owners>Sam Thwaites</owners>
+    <description>
+      ComplexGet.Contracts
+    </description>
+    <copyright>Copyright 2014</copyright>
+    <language>en-AU</language>
+    <tags>complexget</tags>
+  </metadata>
+  <files>
+    <file src="bin\Release\ComplexGet.Contracts.dll" target="lib\net45\" />
+    <file src="bin\Release\ComplexGet.Contracts.pdb" target="lib\net45\" />
+  </files>
+</package>
