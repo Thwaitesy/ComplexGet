@@ -1,28 +1,26 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Data.Services.Client;
 using System.Linq;
-using System.Text;
 
 namespace ComplexGet.Client
 {
-    public class ComplexGet
+    public class ComplexGetModel
     {
         public string Filter { get; set; }
 
-        public string OrderBy { get; set; }
+        public string Sort { get; set; }
 
-        public int PageNumber { get; set; }
+        public int Page { get; set; }
 
-        public int ItemsPerPage { get; set; }
-        
-        public ComplexGet()
+        public int PerPage { get; set; }
+
+        public ComplexGetModel()
         {
-            this.PageNumber = 1;
-            this.ItemsPerPage = 25;
+            this.Page = 1;
+            this.PerPage = 50;
             this.Filter = "";
-            this.OrderBy = "";
+            this.Sort = "";
         }
 
         public static DataServiceQuery<T> CreateQuery<T>()
@@ -35,9 +33,9 @@ namespace ComplexGet.Client
             // Get all properties on the object
             var properties = new Dictionary<string, object>();
             properties.Add("Filter", this.Filter);
-            properties.Add("OrderBy", this.OrderBy);
-            properties.Add("PageNumber", this.PageNumber);
-            properties.Add("ItemsPerPage", this.ItemsPerPage);
+            properties.Add("Sort", this.Sort);
+            properties.Add("Page", this.Page);
+            properties.Add("PerPage", this.PerPage);
 
             // Get names for all IEnumerable properties (excl. string)
             var propertyNames = properties

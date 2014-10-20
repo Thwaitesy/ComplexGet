@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ComplexGet.Client;
+using System;
 using System.Collections.Generic;
 using System.Web.OData;
 using System.Web.OData.Builder;
@@ -8,31 +9,31 @@ namespace ComplexGet.Api
 {
     public static class Extensions
     {
-        public static ODataQueryOptions CreateQueryOptions<T>(this ComplexGet.Client.ComplexGet complexGet) where T : class
+        public static ODataQueryOptions CreateODataQueryOptions<T>(this ComplexGetModel complexGetModel) where T : class
         {
             var queryString = "";
-            if (!string.IsNullOrWhiteSpace(complexGet.Filter))
+            if (!string.IsNullOrWhiteSpace(complexGetModel.Filter))
             {
-                queryString += "$filter=" + complexGet.Filter;
+                queryString += "$filter=" + complexGetModel.Filter;
             }
 
-            if (!string.IsNullOrWhiteSpace(complexGet.OrderBy))
+            if (!string.IsNullOrWhiteSpace(complexGetModel.Sort))
             {
                 if (queryString != "") queryString += "&";
-                queryString += "$orderby=" + complexGet.OrderBy;
+                queryString += "$orderby=" + complexGetModel.Sort;
             }
 
-            var skip = (complexGet.PageNumber - 1) * complexGet.ItemsPerPage;
+            var skip = (complexGetModel.Page - 1) * complexGetModel.PerPage;
             if (skip != 0)
             {
                 if (queryString != "") queryString += "&";
                 queryString += "$skip=" + skip;
             }
 
-            if (complexGet.ItemsPerPage != 0)
+            if (complexGetModel.PerPage != 0)
             {
                 if (queryString != "") queryString += "&";
-                queryString += "$top=" + complexGet.ItemsPerPage;
+                queryString += "$top=" + complexGetModel.PerPage;
             }
 
             ODataModelBuilder modelBuilder = new ODataConventionModelBuilder();
