@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Services.Client;
 using System.Linq;
+using System.Text;
 
-namespace ComplexGet.Client
+namespace ComplexGet.Contracts
 {
     public class ComplexGetModel
     {
@@ -18,14 +18,9 @@ namespace ComplexGet.Client
         public ComplexGetModel()
         {
             this.Page = 1;
-            this.PerPage = 50;
+            this.PerPage = 25;
             this.Filter = "";
             this.Sort = "";
-        }
-
-        public static DataServiceQuery<T> CreateQuery<T>()
-        {
-            return new DataServiceContext(new Uri("http://localhost")).CreateQuery<T>("Fake");
         }
 
         public string ToQueryString()

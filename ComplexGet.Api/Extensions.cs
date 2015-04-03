@@ -1,9 +1,9 @@
-﻿using ComplexGet.Client;
+﻿using ComplexGet.Contracts;
 using System;
 using System.Collections.Generic;
-using System.Web.OData;
-using System.Web.OData.Builder;
-using System.Web.OData.Query;
+using System.Web.Http.OData;
+using System.Web.Http.OData.Builder;
+using System.Web.Http.OData.Query;
 
 namespace ComplexGet.Api
 {
@@ -38,7 +38,7 @@ namespace ComplexGet.Api
 
             ODataModelBuilder modelBuilder = new ODataConventionModelBuilder();
             modelBuilder.EntitySet<T>("Fake");
-            var ctx = new ODataQueryContext(modelBuilder.GetEdmModel(), typeof(T), new System.Web.OData.Routing.ODataPath(new List<System.Web.OData.Routing.ODataPathSegment>()));
+            var ctx = new ODataQueryContext(modelBuilder.GetEdmModel(), typeof(T));
 
             var msg = new System.Net.Http.HttpRequestMessage();
             msg.RequestUri = new Uri(string.Format("http://localhost?{0}", queryString));

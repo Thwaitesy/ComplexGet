@@ -1,9 +1,16 @@
-﻿using System.Data.Services.Client;
+﻿using ComplexGet.Contracts;
+using System;
+using System.Data.Services.Client;
 
 namespace ComplexGet.Client
 {
     public static class Extensions
     {
+        public static DataServiceQuery<T> CreateQuery<T>(this ComplexGetModel modal)
+        {
+            return new DataServiceContext(new Uri("http://localhost")).CreateQuery<T>("Fake");
+        }
+
         public static ComplexGetModel Compile<T>(this DataServiceQuery<T> dataServiceQuery)
         {
             var query = dataServiceQuery.RequestUri.Query;
