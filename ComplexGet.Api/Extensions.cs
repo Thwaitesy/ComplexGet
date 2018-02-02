@@ -37,7 +37,7 @@ namespace ComplexGet.Api
             }
 
             ODataModelBuilder modelBuilder = new ODataConventionModelBuilder();
-            modelBuilder.EntitySet<T>("Fake");
+            modelBuilder.ComplexType<T>();
             var ctx = new ODataQueryContext(modelBuilder.GetEdmModel(), typeof(T));
 
             var msg = new System.Net.Http.HttpRequestMessage();
